@@ -1,3 +1,4 @@
+# SE A 25 Shreyas Gangurde
 # Write a Python program to store marks scored in subject “Fundamental of Data Structure” by
 # N students in the class. Write functions to compute following:
 # a) The average score of class
