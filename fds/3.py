@@ -8,6 +8,10 @@
 # Multiplication (M1, M2)
 # Transpose(M1)
 
+import numpy as np
+
+import numpy.matlib
+
 
 print("Please choose the operation you want to perform")
 print("1. Additon Of Matrices")
@@ -89,17 +93,32 @@ def multiplyMatrices(m1, m2):
         for colNo in range(m2Dimensions[1]):
             sum = 0
             for itemNo in range(m1Dimensions[0]):
-                print(m1[rowNo][itemNo], m2[itemNo][colNo])
+                # print(m1[rowNo][itemNo], m2[itemNo][colNo])
                 sum += m1[rowNo][itemNo] * m2[itemNo][colNo]
-            print(sum)
+            # print(sum)
             productRow.append(sum)
         product.append(productRow)
 
     return product
 
-
     # print(addMatrices(M1, M2))
     # subtraction = subMatrices(M1, M2)
     # print(subtraction)
+
+
+print(np.dot(M1, M2))
+# print(np.add(M1, M2))
+
+
 multi = multiplyMatrices(M1, M2)
+multiKnown = np.dot(M1, M2)
+
+comparison = multi == multiKnown
+
+equal_arrays = comparison.all()
+
+print(equal_arrays)
+
+if (equal_arrays):
+    print("SUCCESS")
 print(multi)
