@@ -15,7 +15,7 @@ struct Member {
 	Member(): PRN{NULL}, name{NULL}, next{nullptr} {
 		cout << "empty Member initiated" << endl;
 	} 
-} ;
+};
 
 class MemberDataBase {
 private:
@@ -36,6 +36,7 @@ public:
 			cout << "Insertion Index Out Of Range" << endl;
 			return;
 		}
+		// if(index == )
 		// cout << member << endl;
 		Member * currentNode = head;
 		for(int i = 0;i<index - 1; i++) {
@@ -65,19 +66,29 @@ public:
 		Member *crntNode = head;
 		cout << length << endl;
 		// cout << crntNode->name;
-		for(int i = 0; i<length ; i++) {
-			if(crntNode == nullptr) {
-				break;
-			}
-			cout << '{'; 
-			cout << crntNode->name;
-			cout << ", "; 
-			cout << crntNode->PRN;
-			cout << "} -> ";
-			cout << crntNode->next;
+		// for(int i = 0; i<length ; i++) {
+		// 	if(crntNode == nullptr) {
+		// 		break;
+		// 	}
+		// 	cout << '{'; 
+		// 	cout << crntNode->name;
+		// 	cout << ", "; 
+		// 	cout << crntNode->PRN;
+		// 	cout << "} -> ";
+		// 	cout << crntNode->next;
 
-			crntNode = crntNode -> next;
+		// 	crntNode = crntNode -> next;
 
+		// }
+		while(crntNode != nullptr) {
+				cout << '{'; 
+				cout << crntNode->name;
+				cout << ", "; 
+				cout << crntNode->PRN;
+				cout << "} -> ";
+				cout << crntNode->next;
+
+				crntNode = crntNode -> next;
 		}
 		cout << "\nPrinting Ended ----" << endl;
 		return;
@@ -90,6 +101,7 @@ int main() {
 	Member *three = new Member("72020122", "Shreyas2");
 	Member *four = new Member("72020123", "Shreyas3");
 	Member *five = new Member("72020124", "Shreyas4");
+	// Member *six = new Member("72020124", "Shreyas4");
 	
 	MemberDataBase divA = MemberDataBase(one); 
 	divA.print();
@@ -101,7 +113,10 @@ int main() {
 	divA.print();
 	divA.addMember(four, 3);
 	divA.print();
-	divA.addMember(two, 4);
+	divA.addMember(three, 4);
 	divA.print();
+	divA.addMember(five, 5);
+	divA.print();
+
 	return 0;
 }
